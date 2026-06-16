@@ -1,7 +1,7 @@
 function AboutUs() {
   return (
     <>
-      <div className="bg-gray-200 py-20">
+      <div className="bg-gray-200 py-20 " dir="rtl">
         <div className="text-center pb-12 text-6xl">
              درباره من
         </div>

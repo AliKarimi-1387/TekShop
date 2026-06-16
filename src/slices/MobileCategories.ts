@@ -1,32 +1,92 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+interface BrandItem {
+  brand: string;
+  thumbnail: string;
+}
+
 interface Product {
   id: number;
   title: string;
   brand: string;
+  thumbnail:string;
+  description: string;
+  price: number
 }
 
-export const fetchMobileCategories = createAsyncThunk(
-    "fetchMobileCategories/mobile",
-    async()=>{
-        const res = await fetch("https://dummyjson.com/products/category/smartphones")
-        if(!res.ok){
-            throw new Error("error")
-        }
-        const data: Product = await res.json()
+interface ProductsResponse {
+  products: Product[];
+}
 
-        const brands = [...new Set(data.products.map(product => product.brand))];
+interface BrandState {
+  brands: BrandItem[];
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: BrandState = {
+  brands: [],
+  loading: false,
+  error: null,
+};
+
+export const fetchMobileBrands = createAsyncThunk<
+  BrandItem[]
+>(
+  "brands/fetchMobileBrands",
+  async () => {
+    const res = await fetch(
+      "https://dummyjson.com/products/category/smartphones"
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch");
     }
-)
 
-export const mobileSlice = createSlice({
-    name: 'mobile',
-    initialState:{
-        categoreis:[]
-    },
-    reducers:{
+    const data: ProductsResponse = await res.json();
 
-    }
-})
+    const uniqueBrandsMap = new Map<string, string>();
 
-export default mobileSlice.reducer
+    data.products.forEach((p) => {
+      if (!uniqueBrandsMap.has(p.brand)) {
+        uniqueBrandsMap.set(p.brand, p.thumbnail);
+      }
+    });
+
+    const result: BrandItem[] = Array.from(
+      uniqueBrandsMap,
+      ([brand, thumbnail]) => ({
+        brand,
+        thumbnail,
+      })
+    );
+
+    return result;
+  }
+);
+
+
+
+const brandSlice = createSlice({
+  name: "brands",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMobileBrands.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchMobileBrands.fulfilled, (state, action) => {
+        state.loading = false;
+        state.brands = action.payload;
+      })
+      .addCase(fetchMobileBrands.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Something went wrong";
+      });
+    
+  },
+});
+
+export default brandSlice.reducer;

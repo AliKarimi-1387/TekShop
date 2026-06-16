@@ -1,9 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import  mobileSlice from "../slices/MobileCategories";
+import  mobileList  from "../slices/mobile";
+import  mobileTarget  from "../slices/mobileTarget";
+
 
 export const store = configureStore({
     reducer:{
-        mobileSlice
+        mobileSlice,
+        mobileList,
+        mobileTarget
     }
 })
 

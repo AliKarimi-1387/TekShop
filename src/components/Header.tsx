@@ -1,5 +1,5 @@
 import AplIcon from "@iconify-react/token-branded/apl";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { FaCartShopping } from "react-icons/fa6";
 
 function Header() {
@@ -12,12 +12,12 @@ function Header() {
           </Link>
 
           <div className="flex gap-4 items-center">
-            <Link to={"/mobiles"} className="font-bold hover:text-gray-600">
+            <NavLink to={"/mobiles"} className={({isActive})=> isActive ? "font-bold text-blue-400 hover:text-blue-600":"font-bold hover:text-gray-600"}>
               Mobile
-            </Link>
-            <Link to={"/laptop"} className="font-bold hover:text-gray-600">
+            </NavLink>
+            <NavLink to={"/laptop"} className={({isActive})=> isActive ? "font-bold text-blue-400 hover:text-blue-600":"font-bold hover:text-gray-600"}>
               Laptop
-            </Link>
+            </NavLink>
           </div>
 
           <div className="flex gap-4 items-center">
