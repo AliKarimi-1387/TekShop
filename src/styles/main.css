@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+@layer components{
+    .primary-btn{
+        @apply px-4 py-2 border border-blue-400 hover:bg-blue-600 hover:text-white transition rounded
+    }
+}
+
+body{
+    direction: rtl;
+}
