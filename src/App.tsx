@@ -8,25 +8,32 @@ import MobileTarget from "./pages/MobileTarget";
 import Laptop from "./pages/Laptop";
 import LaptopList from "./pages/LaptopList";
 import LaptopTarget from "./pages/LaptopTarget";
+import Cart from "./pages/Cart";
+import HeaderLayout from "./layout/HeaderLayout";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/mobiles" element={<Mobiles />} />
-        <Route path="/mobiles/mobile/:brand" element={<MobileList />} />
-        <Route
-          path="/mobiles/mobile/target/:target"
-          element={<MobileTarget />}
-        />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/mobiles" element={<Mobiles />} />
+          <Route path="/mobiles/mobile/:brand" element={<MobileList />} />
+          <Route
+            path="/mobiles/mobile/target/:target"
+            element={<MobileTarget />}
+          />
 
-        <Route path="/laptop" element={<Laptop />} />
-        <Route path="/laptop/:brand" element={<LaptopList />} />
-        <Route path="/laptop/target/:target" element={<LaptopTarget />} />
+          <Route path="/laptop" element={<Laptop />} />
+          <Route path="/laptop/:brand" element={<LaptopList />} />
+          <Route path="/laptop/target/:target" element={<LaptopTarget />} />
+        </Route>
+
+        <Route element={<HeaderLayout />}>
+          <Route path="/shopcart" element={<Cart />} />
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

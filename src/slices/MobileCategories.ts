@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 interface BrandItem {
   brand: string;
   thumbnail: string;
+  qty?: number
 }
 
 interface Product {

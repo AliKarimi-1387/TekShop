@@ -31,8 +31,6 @@ export const mobileListTarget = createAsyncThunk(
 
     const result = data.products.filter((item) => item.brand == brand);
 
-    console.log(result);
-
     return result;
   },
 );
