@@ -1,7 +1,7 @@
 function LoadingCompoenent() {
   return (
     <svg
-      className="size-5 animate-spin text-black"
+      className="size-5 animate-spin text-black block mx-auto mt-4"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

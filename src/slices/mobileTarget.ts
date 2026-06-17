@@ -21,37 +21,31 @@ interface Product {
 }
 
 interface initialStateInterface {
-  targetMobile: Product[];
+  targetMobile: Product | null;
   loading: boolean;
   error: string | null;
 }
 
 const initialState: initialStateInterface = {
-  targetMobile: [],
+  targetMobile: null,
   loading: false,
   error: null,
 };
-
-interface resuterProduct {
-  products: Product[];
-}
 
 export const mobileTargetFetch = createAsyncThunk(
   "mobileTarget/mobileTargetFetch",
   async (id: number) => {
     const res = await fetch(
-      "https://dummyjson.com/products/category/smartphones",
+      `https://dummyjson.com/products/${id}`,
     );
 
     if (!res.ok) {
       throw new Error("feiled to fetch data");
     }
 
-    const data: resuterProduct = await res.json();
+    const data: Product = await res.json();
 
-    const resaulte = data.products.filter((item) => item.id === id);
-
-    return resaulte;
+    return data;
   },
 );
 

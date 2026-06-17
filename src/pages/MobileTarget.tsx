@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import LoadingCompoenent from "../components/Loading";
 import { Navigation } from "swiper/modules";
+import Coments from "../components/targetMobile/Coments";
 
 function MobileTarget() {
   const { target } = useParams();
@@ -29,9 +30,9 @@ function MobileTarget() {
         {error && <div className="text-rose-600 text-3xl">{error}</div>}
 
         <div className="max-w-3xl px-6 mx-auto pt-20">
-          {targetMobile.length ? (
+          {targetMobile ? (
             <Swiper className="flex justify-center" modules={[Navigation]} navigation>
-              {targetMobile[0].images.map((item) => {
+              {targetMobile.images.map((item) => {
                 return (
                   <SwiperSlide>
                     <img src={item} alt="" className="flex justify-self-center"/>
@@ -44,11 +45,11 @@ function MobileTarget() {
           )}
         </div>
 
-        {targetMobile.length && (
-          <div className="flex flex-col mx-[10%] text-3xl bg-blue-50 pb-6 rounded-2xl shadow mb-12">
+        {targetMobile && (
+          <div className="flex flex-col mx-[10%] text-3xl bg-blue-50 pb-6 rounded-2xl shadow mb-12 py-6">
             <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>Name:</h1>
-                <h1>{targetMobile[0].title}</h1>
+                <h1>{targetMobile.title}</h1>
             </div>
             {/* <div className="flex justify-around border-b py-2">
                 <h1>Description:</h1>
@@ -56,18 +57,19 @@ function MobileTarget() {
             </div> */}
             <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>Price:</h1>
-                <h1>{targetMobile[0].price}</h1>
+                <h1>{targetMobile.price}</h1>
             </div>
             <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>weight:</h1>
-                <h1>{targetMobile[0].weight}</h1>
+                <h1>{targetMobile.weight}</h1>
             </div>
             <div className=" md:grid md:grid-cols-2 ps-[10%] py-2">
                 <h1>description:</h1>
-                <h1>{targetMobile[0].description}</h1>
+                <h1>{targetMobile.description}</h1>
             </div>
           </div>
         )}
+        <Coments target={numTarget}/>
       </div>
     </>
   );
