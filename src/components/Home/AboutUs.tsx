@@ -21,7 +21,7 @@ function AboutUs() {
           </div>
           <div>
             <img
-              src="IMG_20260616_130000_783.jpg"
+              src="hero.jpg"
               className="rounded-xl"
               alt=""
             />

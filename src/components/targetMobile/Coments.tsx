@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDisptach, RootState } from "../../store/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { mobileTargetFetch } from "../../slices/mobileTarget";
 import { FaStar } from "react-icons/fa";
 import LoadingCompoenent from "../Loading";
@@ -20,7 +20,6 @@ function Coments({ target }: Id) {
     dispatch(mobileTargetFetch(target));
   }, [dispatch]);
 
-  const date = new Date()
   return (
     <>
       <div className="max-w-2xl mx-auto mb-8">

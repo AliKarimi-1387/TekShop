@@ -10,7 +10,7 @@ function Footer(){
                         <a href="mail:karimiali12357@gmai.com">email</a>
                     </div>
                 </div>
-                این وبسایت توست اقای علی کریمی ساخته شده 
+                این وبسایت توسط علی کریمی ساخته شده 
             </div>
         </footer>
         </>

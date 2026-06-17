@@ -30,13 +30,11 @@ const initialState: BrandState = {
   error: null,
 };
 
-export const fetchMobileBrands = createAsyncThunk<
-  BrandItem[]
->(
+export const fetchMobileBrands = createAsyncThunk(
   "brands/fetchMobileBrands",
-  async () => {
+  async (input:string) => {
     const res = await fetch(
-      "https://dummyjson.com/products/category/smartphones"
+      `https://dummyjson.com/products/category/${input}`
     );
 
     if (!res.ok) {

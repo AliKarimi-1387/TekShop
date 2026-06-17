@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Mobiles from "./pages/Mobiles";
 import MobileList from "./pages/MobileList";
 import MobileTarget from "./pages/MobileTarget";
+import Laptop from "./pages/Laptop";
+import LaptopList from "./pages/LaptopList";
+import LaptopTarget from "./pages/LaptopTarget";
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
           path="/mobiles/mobile/target/:target"
           element={<MobileTarget />}
         />
+
+        <Route path="/laptop" element={<Laptop />} />
+        <Route path="/laptop/:brand" element={<LaptopList />} />
+        <Route path="/laptop/target/:target" element={<LaptopTarget />} />
       </Routes>
       <Footer />
     </BrowserRouter>

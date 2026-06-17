@@ -8,7 +8,6 @@ interface reviewsInterface {
   reviewerEmail: string;
 }
 
-
 interface Product {
   id: number;
   title: string;
@@ -17,7 +16,7 @@ interface Product {
   price: number;
   images: string[];
   reviews: reviewsInterface[];
-  weight:string
+  weight: string;
 }
 
 interface initialStateInterface {
@@ -35,9 +34,7 @@ const initialState: initialStateInterface = {
 export const mobileTargetFetch = createAsyncThunk(
   "mobileTarget/mobileTargetFetch",
   async (id: number) => {
-    const res = await fetch(
-      `https://dummyjson.com/products/${id}`,
-    );
+    const res = await fetch(`https://dummyjson.com/products/${id}`);
 
     if (!res.ok) {
       throw new Error("feiled to fetch data");

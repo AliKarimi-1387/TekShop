@@ -11,7 +11,7 @@ function Categoreis() {
           </Link>
         </div>
         <div className="relative w-full">
-          <Link to={"/laptops"}>
+          <Link to={"/laptop"}>
             <img src="laptop.jpg" alt="" className="w-full rounded-2xl" />
             <h1 className="text-3xl absolute top-0 left-[40%] text-white">Laptops</h1>
           </Link>

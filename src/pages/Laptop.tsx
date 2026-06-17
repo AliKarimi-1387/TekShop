@@ -5,13 +5,13 @@ import { fetchMobileBrands } from "../slices/MobileCategories";
 import LoadingCompoenent from "../components/Loading";
 import { Link } from "react-router";
 
-function Mobiles() {
+function Laptop() {
   const { brands, loading, error } = useSelector(
     (state: RootState) => state.mobileSlice,
   );
   const dispatch = useDispatch<AppDisptach>();
   useEffect(() => {
-    dispatch(fetchMobileBrands('smartphones'));
+    dispatch(fetchMobileBrands('laptops'));
   }, [dispatch]);
 
   return (
@@ -27,7 +27,7 @@ function Mobiles() {
             brands.map((item) => {
               return (
                 <div  className="bg-gray-100 relative text-center py-4 rounded-2xl shadow hover:scale-101 transition" key={item.brand}>
-                  <Link to={`/mobiles/mobile/${item.brand}`}>
+                  <Link to={`/laptop/${item.brand}`}>
                     <img
                       src={item.thumbnail}
                       className="justify-self-center"
@@ -44,4 +44,4 @@ function Mobiles() {
   );
 }
 
-export default Mobiles;
+export default Laptop;
