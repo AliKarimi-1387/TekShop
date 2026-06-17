@@ -7,7 +7,7 @@ function Hero() {
         className="h-[93vh] bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${HeroImg})` }}
       >
-        <div className="container mx-auto flex justify-center relative">
+        <div className="max-w-screen-2xl px-6 mx-auto flex justify-center relative">
             <h1 className="text-7xl absolute top-40"><span className="text-yellow-400">Tek</span><span className="text-blue-500">Shop</span></h1>
         </div>
       </div>

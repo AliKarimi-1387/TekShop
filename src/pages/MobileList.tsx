@@ -17,7 +17,7 @@ function MobileList() {
 
   return (
     <>
-      <div className="container mx-auto my-8">
+      <div className="max-w-screen-2xl px-6 mx-auto my-8">
         {loading && <LoadingCompoenent />}
 
 

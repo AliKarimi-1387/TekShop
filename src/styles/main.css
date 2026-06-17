@@ -5,5 +5,22 @@
     .primary-btn{
         @apply px-4 py-2 border border-blue-400 hover:bg-blue-600 hover:text-white transition rounded
     }
+    .container{
+        width: 100%;
+    @media (width >= 35rem /* 640px */) {
+        max-width: 35rem /* 640px */;
+    }
+    @media (width >= 48rem /* 768px */) {
+        max-width: 48rem /* 768px */;
+    }
+    @media (width >= 64rem /* 1024px */) {
+        max-width: 64rem /* 1024px */;
+    }
+    @media (width >= 80rem /* 1280px */) {
+        max-width: 80rem /* 1280px */;
+    }
+    @media (width >= 96rem /* 1536px */) {
+        max-width: 96rem /* 1536px */;
+    }}
 }
 

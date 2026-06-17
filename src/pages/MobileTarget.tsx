@@ -21,15 +21,14 @@ function MobileTarget() {
     dispatch(mobileTargetFetch(numTarget!));
   }, [dispatch]);
 
-  console.log(targetMobile);
   return (
     <>
-      <div className="container mx-auto justify-center">
+      <div className="max-w-screen-2xl px-6 mx-auto justify-center">
         {loading && <LoadingCompoenent />}
 
         {error && <div className="text-rose-600 text-3xl">{error}</div>}
 
-        <div className="container mx-auto px-30 pt-20">
+        <div className="max-w-3xl px-6 mx-auto pt-20">
           {targetMobile.length ? (
             <Swiper className="flex justify-center" modules={[Navigation]} navigation>
               {targetMobile[0].images.map((item) => {
@@ -46,8 +45,8 @@ function MobileTarget() {
         </div>
 
         {targetMobile.length && (
-          <div className="flex flex-col mx-60 text-3xl bg-blue-50 pb-6 px-30 rounded-2xl shadow mb-12">
-            <div className="grid grid-cols-2 ps-40 border-b py-2">
+          <div className="flex flex-col mx-[10%] text-3xl bg-blue-50 pb-6 rounded-2xl shadow mb-12">
+            <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>Name:</h1>
                 <h1>{targetMobile[0].title}</h1>
             </div>
@@ -55,15 +54,15 @@ function MobileTarget() {
                 <h1>Description:</h1>
                 <h1>{targetMobile[0].description}</h1>
             </div> */}
-            <div className="grid grid-cols-2 ps-40 border-b py-2">
+            <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>Price:</h1>
                 <h1>{targetMobile[0].price}</h1>
             </div>
-            <div className="grid grid-cols-2 ps-40 border-b py-2">
+            <div className="grid grid-cols-2 ps-[10%] border-b py-2">
                 <h1>weight:</h1>
                 <h1>{targetMobile[0].weight}</h1>
             </div>
-            <div className="grid grid-cols-2 ps-40 border-b py-2">
+            <div className=" md:grid md:grid-cols-2 ps-[10%] py-2">
                 <h1>description:</h1>
                 <h1>{targetMobile[0].description}</h1>
             </div>

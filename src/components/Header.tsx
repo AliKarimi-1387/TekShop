@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
       <header className="bg-gray-200 shadow">
-        <div className="container mx-auto py-4 flex justify-between items-center">
+        <div className="max-w-screen-2xl px-6 mx-auto py-4 flex justify-between items-center">
           <Link to={"/"}>
             <AplIcon height="2rem" />
           </Link>

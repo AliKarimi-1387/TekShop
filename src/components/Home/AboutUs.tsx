@@ -6,7 +6,7 @@ function AboutUs() {
              درباره من
         </div>
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+        <div className="max-w-screen-2xl px-6 mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16">
           <div className="text-xl">
             من علی هستم، یک برنامه‌نویس در حال یادگیری و علاقه‌مند به توسعه وب.
             تمرکزم روی فرانت‌اند و به‌خصوص React است و در مسیر تبدیل شدن به یک
