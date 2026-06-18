@@ -25,9 +25,9 @@ function Header() {
               <FaCartShopping />
             </Link>
 
-            <Link to={"/login"} className="primary-btn">
+            <button className="primary-btn disabled">
               login
-            </Link>
+            </button>
           </div>
         </div>
       </header>

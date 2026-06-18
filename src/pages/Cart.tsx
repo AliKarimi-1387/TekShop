@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../store/store";
 
 function Cart() {
-  const { products, loading, error } = useSelector(
+  const { products } = useSelector(
     (state: RootState) => state.shopCart,
   );
 
@@ -33,7 +33,7 @@ function Cart() {
                     <td className="px-3 py-2 whitespace-nowrap">
                       <div className="flex gap-x-4">
                         <img
-                          src={product.img}
+                          src={product.thumbnail}
                           alt=""
                           className="aspect-square size-20 rounded-sm object-cover"
                         />

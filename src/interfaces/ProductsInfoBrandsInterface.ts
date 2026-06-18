@@ -1,11 +1,11 @@
 interface productInfo {
   brand: string;
   thumbnail: string;
-  qty: number
 }
 
 interface Itembrand {
   item: productInfo;
+  brand: string
 }
 
 

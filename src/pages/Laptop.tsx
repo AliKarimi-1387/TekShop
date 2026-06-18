@@ -26,7 +26,7 @@ function Laptop() {
 
           {brands &&
             brands.map((item) => {
-              return <ProductsBrandsCard item={item} key={item.brand} />;
+              return <ProductsBrandsCard item={item} key={item.brand} brand={'laptop'} />;
             })}
         </div>
       </div>

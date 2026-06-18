@@ -26,7 +26,7 @@ function Mobiles() {
 
           {brands &&
             brands.map((item) => {
-              return <ProductsBrandsCard item={{...item , qty : item.qty ? item.qty : 1}} key={item.brand} />;
+              return <ProductsBrandsCard item={{...item}} key={item.brand} brand={'mobiles/mobile'} />;
             })}
         </div>
       </div>

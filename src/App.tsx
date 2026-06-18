@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import Header from "./components/Header";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 import Mobiles from "./pages/Mobiles";
 import MobileList from "./pages/MobileList";
 import MobileTarget from "./pages/MobileTarget";

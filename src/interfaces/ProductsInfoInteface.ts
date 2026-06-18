@@ -2,7 +2,8 @@ interface productInfo {
   title: string;
   price: number;
   id: number;
-  thumbnail: string
+  thumbnail: string,
+  qty?:number
 }
 
 interface Item {
