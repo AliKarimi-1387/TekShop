@@ -30,7 +30,7 @@ function LaptopList() {
           {mobile &&
             mobile.map((item) => {
               return (
-                <ProductsCard item={item} key={item.id}/>
+                <ProductsCard item={item} key={item.id} target="laptop"/>
               );
             })}
         </div>

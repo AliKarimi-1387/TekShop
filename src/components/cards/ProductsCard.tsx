@@ -6,7 +6,7 @@ import { addProduct } from "../../slices/shopcart/shopcartSlice";
 
 
 
-function ProductsCard({ item }:Item) {
+function ProductsCard({ item , target }:Item) {
   const dispatch = useDispatch<AppDisptach>()
   return (
     <>
@@ -24,7 +24,7 @@ function ProductsCard({ item }:Item) {
         <div className="flex items-center justify-around mt-8 gap-12">
           <button onClick={()=>dispatch(addProduct({...item}))} className="primary-btn">Buy</button>
           <Link
-            to={`/mobiles/mobile/target/${item.id}`}
+            to={`/${target}/target/${item.id}`}
             className="primary-btn"
           >
             Lern more

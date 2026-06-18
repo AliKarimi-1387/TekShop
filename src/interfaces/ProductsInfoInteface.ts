@@ -4,10 +4,12 @@ interface productInfo {
   id: number;
   thumbnail: string,
   qty?:number
+
 }
 
 interface Item {
   item: productInfo;
+  target: string
 }
 
 export default Item
